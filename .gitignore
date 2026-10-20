@@ -1,0 +1,10 @@
+# Arquivos brutos (pesados, não vão para o site publicado)
+*.zip
+*.pdf
+_fontes/fotos/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
