@@ -2,6 +2,7 @@
  * RCM Distribuidora | Funil "Monte sua Loja Completa"
  * Recebe os dados do quiz e grava na aba "Leads".
  * Cada lead é UMA linha, identificada pelo Lead ID, que vai sendo completada a cada etapa.
+ * Recebe as duas versões do funil (A: landing primeiro, B: quiz primeiro). Veja VERSOES.md.
  * Passo a passo de instalação: veja SETUP.md
  */
 
@@ -18,7 +19,7 @@ var COLUNAS = [
   'Nome', 'WhatsApp', 'Link WhatsApp', 'E-mail', 'Tipo de loja', 'Prazo',
   'Investimento em equipamentos', 'Perfil', 'Principal dúvida',
   'UTM Source', 'UTM Medium', 'UTM Campaign', 'UTM Content', 'UTM Term', 'fbclid',
-  'Dispositivo', 'Lead ID', 'URL de entrada', 'Origem do clique'
+  'Dispositivo', 'Lead ID', 'URL de entrada', 'Origem do clique', 'Versão do funil'
 ];
 // campo do JSON enviado pelo site -> coluna
 var CAMPOS = {
@@ -26,7 +27,8 @@ var CAMPOS = {
   investimento: 'Investimento em equipamentos', perfil: 'Perfil', duvida: 'Principal dúvida',
   utm_source: 'UTM Source', utm_medium: 'UTM Medium', utm_campaign: 'UTM Campaign',
   utm_content: 'UTM Content', utm_term: 'UTM Term', fbclid: 'fbclid',
-  dispositivo: 'Dispositivo', url_entrada: 'URL de entrada', origem: 'Origem do clique'
+  dispositivo: 'Dispositivo', url_entrada: 'URL de entrada', origem: 'Origem do clique',
+  versao: 'Versão do funil'
 };
 var STATUS_ORDEM = ['iniciou', 'em andamento', 'completo'];
 var ETAPAS = ['Contato', 'P1 Tipo de loja', 'P2 Prazo', 'P3 Investimento', 'P4 Perfil', 'P5 Dúvida'];
@@ -125,14 +127,18 @@ function gravarLead(dados) {
   return { novo: novo };
 }
 
+// Faixas de investimento que deixam o lead "quente" quando o prazo é curto.
+// Versão B (3 opções): '50a100' e '100mais'. Versão A (6 opções): a partir de R$ 75 mil.
+var INVEST_QUENTE = ['50a100', '100mais', '75a100', '100a150', '150mais'];
+
 /** Temperatura do lead, para priorizar o atendimento. */
 function temperatura(prazo, investimento, dados) {
   var p = dados.prazo_cod || codPrazo(prazo);
   var i = dados.investimento_cod || codInvestimento(investimento);
   if (!p) return '';
   if (p === '12m') return '🔵 Frio/Futuro';
-  if ((p === 'imediato' || p === '3m') && ['75a100', '100a150', '150mais'].indexOf(i) > -1) return '🔥 Quente';
-  return '🟡 Morno';
+  if ((p === 'imediato' || p === '3m') && INVEST_QUENTE.indexOf(i) > -1) return '🔥 Quente';
+  return '🟡 Morno'; // prazo até 6 meses com qualquer investimento, ou prazo curto com até R$ 50 mil
 }
 function codPrazo(t) {
   t = String(t || '').toLowerCase();
@@ -147,9 +153,11 @@ function codInvestimento(t) {
   t = String(t || '').toLowerCase();
   if (!t) return '';
   if (t.indexOf('até r$ 50') > -1) return 'ate50';
+  if (t.indexOf('de r$ 50 mil a r$ 100') > -1) return '50a100'; // versão B
   if (t.indexOf('de r$ 50') > -1) return '50a75';
   if (t.indexOf('de r$ 75') > -1) return '75a100';
   if (t.indexOf('de r$ 100') > -1) return '100a150';
+  if (t.indexOf('acima de r$ 100') > -1) return '100mais'; // versão B
   if (t.indexOf('acima') > -1) return '150mais';
   if (t.indexOf('não sei') > -1) return 'naosei';
   return '';
@@ -164,7 +172,7 @@ function limpar(v) {
 function avisar(valores, motivo) {
   try {
     var v = function (nome) { return valores[col(nome) - 1] || '-'; };
-    var linhas = ['Nome', 'WhatsApp', 'E-mail', 'Tipo de loja', 'Prazo', 'Investimento em equipamentos', 'Perfil', 'Principal dúvida', 'Temperatura', 'Parou na etapa', 'UTM Campaign']
+    var linhas = ['Nome', 'WhatsApp', 'E-mail', 'Tipo de loja', 'Prazo', 'Investimento em equipamentos', 'Perfil', 'Principal dúvida', 'Temperatura', 'Parou na etapa', 'Versão do funil', 'UTM Campaign']
       .map(function (n) { return '<tr><td style="padding:4px 12px 4px 0;color:#555">' + n + '</td><td style="padding:4px 0"><b>' + String(v(n)).replace(/</g, '&lt;') + '</b></td></tr>'; })
       .join('');
     var link = v('Link WhatsApp');
@@ -179,12 +187,14 @@ function avisar(valores, motivo) {
   }
 }
 
-/** Cria a aba e o cabeçalho, se ainda não existirem. */
+/** Cria a aba e o cabeçalho, se ainda não existirem. Também acrescenta colunas novas (ex.: Versão do funil). */
 function obterAba() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var aba = ss.getSheetByName(NOME_ABA);
   if (!aba) aba = ss.insertSheet(NOME_ABA);
-  if (aba.getRange(1, 1).getValue() !== COLUNAS[0]) formatarAba(aba);
+  if (aba.getMaxColumns() < COLUNAS.length) aba.insertColumnsAfter(aba.getMaxColumns(), COLUNAS.length - aba.getMaxColumns());
+  var cabecalho = aba.getRange(1, 1, 1, COLUNAS.length).getValues()[0].join('|');
+  if (cabecalho !== COLUNAS.join('|')) formatarAba(aba);
   return aba;
 }
 
@@ -197,7 +207,7 @@ function formatarAba(aba) {
   aba.setFrozenColumns(0);
   var larguras = { 'Data entrada': 140, 'Última atualização': 140, 'Status': 110, 'Parou na etapa': 130, 'Temperatura': 120,
     'Nome': 170, 'WhatsApp': 130, 'Link WhatsApp': 120, 'E-mail': 190, 'Tipo de loja': 150, 'Prazo': 220,
-    'Investimento em equipamentos': 190, 'Perfil': 260, 'Principal dúvida': 340, 'Lead ID': 260, 'URL de entrada': 260 };
+    'Investimento em equipamentos': 190, 'Perfil': 260, 'Principal dúvida': 340, 'Lead ID': 260, 'URL de entrada': 260, 'Versão do funil': 110 };
   Object.keys(larguras).forEach(function (n) { aba.setColumnWidth(col(n), larguras[n]); });
   aba.getRange('A:B').setNumberFormat('dd/MM/yyyy HH:mm');
   aba.getRange(2, col('WhatsApp'), aba.getMaxRows() - 1, 1).setNumberFormat('@');
@@ -224,7 +234,7 @@ function configurarPlanilha() {
 /** Teste pelo editor: simula um lead completo e depois atualiza a mesma linha. */
 function testeManual() {
   var id = 'teste-' + new Date().getTime();
-  doPost({ postData: { contents: JSON.stringify({ lead_id: id, status: 'iniciou', etapa_atual: 'Contato', nome: 'Teste RCM', whatsapp: '(62) 99999-9999', dispositivo: 'desktop' }) } });
-  doPost({ postData: { contents: JSON.stringify({ lead_id: id, status: 'em andamento', etapa_atual: 'P3 Investimento', tipo: 'Centro automotivo', prazo: 'Nos próximos 3 meses', prazo_cod: '3m', investimento: 'De R$ 100 mil a R$ 150 mil', investimento_cod: '100a150' }) } });
-  Logger.log('Confira a aba Leads: deve haver UMA linha com Lead ID ' + id + ' e Temperatura Quente.');
+  doPost({ postData: { contents: JSON.stringify({ lead_id: id, status: 'iniciou', etapa_atual: 'Contato', nome: 'Teste RCM', whatsapp: '(62) 99999-9999', dispositivo: 'desktop', versao: 'B' }) } });
+  doPost({ postData: { contents: JSON.stringify({ lead_id: id, status: 'em andamento', etapa_atual: 'P3 Investimento', tipo: 'Centro automotivo', prazo: 'Nos próximos 3 meses', prazo_cod: '3m', investimento: 'De R$ 50 mil a R$ 100 mil', investimento_cod: '50a100', versao: 'B' }) } });
+  Logger.log('Confira a aba Leads: deve haver UMA linha com Lead ID ' + id + ', Versão do funil B e Temperatura Quente.');
 }
