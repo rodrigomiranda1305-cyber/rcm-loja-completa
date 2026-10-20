@@ -55,6 +55,12 @@ for src, nome, w, boxes in FOTOS:
     if nome != 'hero-rampa-alinhamento-saveiro':
         salvar(src, nome + '-480', 480, boxes, q=68)  # versão leve para celular (srcset)
 
+# fundo da página do quiz (versão B): foto de loja já desfocada e pequena, carrega rápido
+fundo = blur(ImageOps.exif_transpose(Image.open(os.path.join(SRC, 'PHOTO-2026-07-15-10-24-29.jpg'))).convert('RGB'), [(250, 608, 305, 655)])
+fundo = fundo.resize((720, 540), Image.LANCZOS).filter(ImageFilter.GaussianBlur(10))
+fundo.save(os.path.join(OUT, 'fundo-quiz-loja-desfocada.webp'), 'WEBP', quality=50, method=6)
+print('fundo-quiz-loja-desfocada.webp', os.path.getsize(os.path.join(OUT, 'fundo-quiz-loja-desfocada.webp')) // 1024, 'KB')
+
 # versão leve do hero para celular (LCP)
 salvar('PHOTO-2026-10-01-16-44-59.jpg', 'hero-rampa-alinhamento-saveiro-720', 720, [], q=64)
 

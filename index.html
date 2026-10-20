@@ -3,717 +3,200 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Monte sua Loja Automotiva Completa | RCM Distribuidora</title>
-  <meta name="description" content="Desde 1992 montando lojas automotivas em todo o Brasil. Equipamentos entregues montados, testados e com treinamento. Garantia feita direto com a RCM.">
-  <meta name="theme-color" content="#0E1440">
+  <title>Monte sua Loja Automotiva | RCM Distribuidora</title>
+  <meta name="description" content="Vai abrir sua loja automotiva? Responda 5 perguntas e receba um direcionamento da RCM: quais equipamentos, quanto investir e por onde começar.">
+  <meta name="theme-color" content="#0A0F33">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Monte sua loja automotiva completa com a RCM">
-  <meta property="og:description" content="Equipamentos, instalação, rede de ar e treinamento em um só lugar. Desde 1992.">
+  <meta property="og:title" content="Vai abrir sua loja automotiva? Descubra a estrutura certa.">
+  <meta property="og:description" content="Responda 5 perguntas rápidas e receba um direcionamento da RCM. Desde 1992.">
   <meta property="og:image" content="assets/img/og-image.jpg">
 
   <link rel="preconnect" href="https://cdn.utmify.com.br">
   <link rel="preload" href="assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero-rampa-alinhamento-saveiro-720.webp" imagesrcset="assets/img/hero-rampa-alinhamento-saveiro-720.webp 720w, assets/img/hero-rampa-alinhamento-saveiro.webp 960w" imagesizes="100vw" media="(max-width: 899px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/img/hero-centro-automotivo-elevadores.webp" media="(min-width: 900px)" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="assets/img/fundo-quiz-loja-desfocada.webp" as="image">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/quiz.css">
 
   <!-- =====================================================
+       VERSÃO B do funil: quiz primeiro (esta página), site depois (projeto.html).
+       A versão A (landing primeiro) está em /versao-a/. Veja VERSOES.md.
+
        UTMIFY: cole aqui o script de UTMs da Utmify, se preferir colar manualmente.
        Por padrão ele já é carregado automaticamente quando CONFIG.UTMIFY_SCRIPT = true
        (assets/js/config.js). Se colar aqui, deixe UTMIFY_SCRIPT = false para não duplicar.
        ===================================================== -->
 
-  <!-- Meta Pixel: carregado por assets/js/main.js quando CONFIG.META_PIXEL_ID estiver preenchido. -->
+  <!-- Meta Pixel: carregado por assets/js/comum.js quando CONFIG.META_PIXEL_ID estiver preenchido. -->
 
   <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/comum.js" defer></script>
   <script src="assets/js/quiz.js" defer></script>
 </head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<body class="qp">
+  <div class="qp-bg" aria-hidden="true"></div>
 
   <!-- Ícones -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-chev-l" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m15 5-7 7 7 7"/></symbol>
-    <symbol id="i-chev-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></symbol>
-    <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.3 5.3L3.6 17.4a1.4 1.4 0 0 0 0 2l1 1a1.4 1.4 0 0 0 2 0l5.8-5.8a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.6-.6-2.3 2.4-2.6Z"/></symbol>
-    <symbol id="i-rocket" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1ZM12 15l-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
-    <symbol id="i-building" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01M12 10h.01"/></symbol>
-    <symbol id="i-expand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 3h7v7H3zM14 14h7v7h-7zM14 3h7v7M10 21H3v-7M17.5 10v4M7 10v4M10 17.5h4"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14ZM20 20l-4-4"/></symbol>
-    <symbol id="i-layout" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 3h18v18H3zM3 9h18M9 9v12"/></symbol>
-    <symbol id="i-wind" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h7"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2 6h12v10H2zM14 9h4l3 3.5V16h-7z"/><circle cx="6" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
-    <symbol id="i-grad" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m2 9 10-5 10 5-10 5L2 9Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></symbol>
-    <symbol id="i-headset" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a1 1 0 0 1-1-1v-5ZM20 14h-3v6h2a1 1 0 0 0 1-1v-5ZM17 20c0 1-2 2-5 2"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
-    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
-    <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.3-.6-.4Z"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
-    <symbol id="i-sound" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01M12 10h.01"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2 6h12v10H2zM14 9h4l3 3.5V16h-7z"/><circle cx="6" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
   </svg>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header" id="topo">
-    <div class="container header-inner">
-      <a href="#inicio" class="header-logo" aria-label="RCM Distribuidora, voltar ao início">
-        <img src="assets/img/logo-rcm-distribuidora.svg" alt="RCM Distribuidora" width="120" height="51">
-      </a>
-      <nav class="header-nav" aria-label="Seções">
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#garantia">Garantia</a>
-        <a href="#lojas">Lojas entregues</a>
-        <a href="#duvidas">Dúvidas</a>
-      </nav>
-      <button class="btn btn-primary btn-sm" type="button" data-open-quiz data-origem="header">Montar minha loja</button>
-    </div>
+  <header class="qp-header">
+    <img src="assets/img/logo-rcm-distribuidora.svg" alt="RCM Distribuidora" width="108" height="46">
   </header>
 
-  <main id="conteudo">
-    <!-- ================= 3.1 HERO ================= -->
-    <section class="hero" id="inicio">
-      <picture class="hero-bg">
-        <source media="(min-width: 900px)" srcset="assets/img/hero-centro-automotivo-elevadores.webp" width="1280" height="960">
-        <img src="assets/img/hero-rampa-alinhamento-saveiro-720.webp" srcset="assets/img/hero-rampa-alinhamento-saveiro-720.webp 720w, assets/img/hero-rampa-alinhamento-saveiro.webp 960w" sizes="100vw" alt="Rampa de alinhamento RCM com caminhonete em uma loja automotiva montada" width="960" height="1280" fetchpriority="high">
-      </picture>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <p class="eyebrow hero-anim" style="--d:.05s"><span class="eyebrow-line" aria-hidden="true"></span>Desde 1992 montando lojas automotivas em todo o Brasil</p>
-        <h1 class="hero-title hero-anim" style="--d:.15s">Sua loja automotiva <em>completa</em>, entregue montada, testada e com você treinado para operar.</h1>
-        <!-- Títulos alternativos para teste A/B:
-        <h1 class="hero-title">Do galpão vazio à loja funcionando: equipamentos, instalação e treinamento em um só lugar.</h1>
-        <h1 class="hero-title">Abra sua loja automotiva com quem já montou mais de 15.000 pelo Brasil.</h1>
-        -->
-        <p class="hero-sub hero-anim" style="--d:.28s">Mais de 15.000 lojas montadas no Brasil. Do projeto do galpão à rede de ar, você não abre sozinho: a RCM orienta cada etapa e responde pela garantia de todos os equipamentos direto com você.</p>
-        <div class="hero-cta hero-anim" style="--d:.4s">
-          <button class="btn btn-primary btn-lg btn-pulse" type="button" data-open-quiz data-origem="hero">
-            Quero montar minha loja <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-          <p class="hero-micro">Responda 5 perguntas rápidas e receba um direcionamento para o seu projeto. Leva menos de 2 minutos.</p>
-        </div>
-      </div>
-      <div class="hero-stripes" aria-hidden="true"><span></span><span></span></div>
-    </section>
+  <main class="qp-main" id="conteudo">
+    <div class="qp-wrap">
 
-    <!-- ================= 3.2 NÚMEROS ================= -->
-    <section class="stats" aria-label="RCM em números">
-      <div class="container">
-        <ul class="stats-grid">
-          <li class="stat reveal">
-            <span class="stat-pre">Desde</span>
-            <strong class="stat-num" data-count="1992" data-from="1960">1992</strong>
-            <span class="stat-label">no mercado automotivo</span>
-          </li>
-          <li class="stat reveal" style="--d:.08s">
-            <strong class="stat-num"><span class="stat-plus">+</span><span data-count="15000" data-format="milhar">15.000</span></strong>
-            <span class="stat-label">lojas completas montadas</span>
-          </li>
-          <li class="stat reveal" style="--d:.16s">
-            <strong class="stat-num"><span class="stat-small">Nº</span> <span data-count="1" data-from="9">1</span></strong>
-            <span class="stat-label">em montagem de lojas no Centro-Oeste</span>
-          </li>
-          <li class="stat reveal" style="--d:.24s">
-            <strong class="stat-num"><span data-count="100">100</span>%</strong>
-            <span class="stat-label">da garantia feita direto com a RCM</span>
-          </li>
+      <!-- ================= 3.1 ABERTURA ================= -->
+      <section class="qp-intro" data-intro aria-labelledby="qp-titulo">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Desde 1992 montando lojas automotivas em todo o Brasil</p>
+        <h1 class="qp-title" id="qp-titulo">Vai abrir sua loja automotiva? Descubra <em>a estrutura certa</em> para o seu projeto.</h1>
+        <p class="qp-sub">Responda 5 perguntas rápidas e um especialista da RCM vai te enviar um direcionamento: quais equipamentos, quanto investir e por onde começar.</p>
+        <ul class="qp-selos">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>+15.000 lojas montadas</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg>Entrega montada, testada e com treinamento</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia direto com a RCM</li>
         </ul>
-      </div>
-    </section>
+        <div class="qp-cta" data-cta-inicio>
+          <button class="btn btn-primary btn-lg btn-block btn-pulse" type="button" data-comecar>Começar agora <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="qp-micro">Leva menos de 2 minutos.</p>
+        </div>
+        <div class="qp-feito" data-feito hidden>
+          <p>Você já enviou suas respostas. Seu projeto está com o nosso time.</p>
+          <a class="btn btn-primary btn-block" href="projeto.html">Ver meu projeto <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <button class="qp-link" type="button" data-recomecar>Enviar respostas de outra pessoa</button>
+        </div>
+      </section>
 
-    <!-- ================= 3.3 PARA QUEM É ================= -->
-    <section class="section section-light" id="para-quem">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">Para quem é</p>
-          <h2 class="h2">Seja qual for o seu ponto de partida, a gente sabe o caminho.</h2>
+      <!-- ================= 3.2 QUIZ ================= -->
+      <section class="qp-card" data-card aria-label="Diagnóstico do seu projeto de loja" hidden>
+        <div class="qp-card-top">
+          <p class="qp-etapa" data-etapa aria-live="polite">Etapa 1 de 6</p>
+          <div class="qp-progress" aria-hidden="true"><span data-bar></span></div>
         </div>
-        <div class="perfil-grid">
-          <article class="perfil-card reveal">
-            <span class="perfil-n" aria-hidden="true">01</span>
-            <span class="perfil-ic"><svg aria-hidden="true"><use href="#i-wrench"/></svg></span>
-            <h3>Mecânico que quer a própria loja.</h3>
-            <p>Você já domina o serviço. Agora é hora de trabalhar para você, com estrutura profissional desde o primeiro dia.</p>
-          </article>
-          <article class="perfil-card reveal" style="--d:.08s">
-            <span class="perfil-n" aria-hidden="true">02</span>
-            <span class="perfil-ic"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span>
-            <h3>Quem quer sair do emprego e empreender.</h3>
-            <p>Nunca teve uma loja? Sem problema. A gente orienta do zero: quais máquinas, quanto investir e por onde começar.</p>
-          </article>
-          <article class="perfil-card reveal" style="--d:.16s">
-            <span class="perfil-n" aria-hidden="true">03</span>
-            <span class="perfil-ic"><svg aria-hidden="true"><use href="#i-building"/></svg></span>
-            <h3>Empresário entrando no ramo automotivo.</h3>
-            <p>Um mercado que não para: todo carro precisa de pneu, alinhamento e manutenção. Entre com a estrutura certa e sem desperdício.</p>
-          </article>
-          <article class="perfil-card reveal" style="--d:.24s">
-            <span class="perfil-n" aria-hidden="true">04</span>
-            <span class="perfil-ic"><svg aria-hidden="true"><use href="#i-expand"/></svg></span>
-            <h3>Quem já tem loja e quer expandir.</h3>
-            <p>Nova unidade ou novos serviços. Equipamentos padronizados, instalação rápida e o mesmo suporte em todas as lojas.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================= 3.4 TIPO DE LOJA ================= -->
-    <section class="section section-dark tipos" id="tipos">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">Que loja você quer abrir</p>
-          <h2 class="h2">Montamos o seu tipo de loja, do jeito certo.</h2>
-          <p class="lead">Toque no seu tipo de loja e comece o diagnóstico já com essa resposta.</p>
-        </div>
-        <div class="tipo-grid">
-          <button type="button" class="tipo-card reveal" data-open-quiz data-tipo="Centro automotivo" data-origem="card-tipo">
-            <img src="assets/img/tipo-centro-automotivo-rampa-alinhamento.webp" srcset="assets/img/tipo-centro-automotivo-rampa-alinhamento-480.webp 480w, assets/img/tipo-centro-automotivo-rampa-alinhamento.webp 800w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 46vw, 82vw" alt="Rampa de alinhamento e alinhador em um centro automotivo" width="800" height="1067" loading="lazy" decoding="async">
-            <span class="tipo-body">
-              <span class="tipo-tag">01</span>
-              <span class="tipo-title">Centro Automotivo</span>
-              <span class="tipo-text">Elevadores Krebs, alinhador 3D Car-Tech, rampa de alinhamento, balanceadora, desmontadora, troca de óleo e ferramentaria completa.</span>
-              <span class="tipo-go">Quero esse tipo <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-            </span>
-          </button>
-          <button type="button" class="tipo-card reveal" style="--d:.08s" data-open-quiz data-tipo="Borracharia" data-origem="card-tipo">
-            <img src="assets/img/tipo-borracharia-desmontadora-balanceadora.webp" srcset="assets/img/tipo-borracharia-desmontadora-balanceadora-480.webp 480w, assets/img/tipo-borracharia-desmontadora-balanceadora.webp 800w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 46vw, 82vw" alt="Desmontadora e balanceadora Car-Tech instaladas em uma borracharia" width="800" height="1067" loading="lazy" decoding="async">
-            <span class="tipo-body">
-              <span class="tipo-tag">02</span>
-              <span class="tipo-title">Borracharia</span>
-              <span class="tipo-text">Desmontadora e balanceadora Car-Tech, compressor Pressure, rede de ar, chave de impacto, macaco jacaré e cavaletes.</span>
-              <span class="tipo-go">Quero esse tipo <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-            </span>
-          </button>
-          <button type="button" class="tipo-card reveal" style="--d:.16s" data-open-quiz data-tipo="Oficina mecânica geral" data-origem="card-tipo">
-            <img src="assets/img/tipo-oficina-mecanica-elevador.webp" srcset="assets/img/tipo-oficina-mecanica-elevador-480.webp 480w, assets/img/tipo-oficina-mecanica-elevador.webp 800w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 46vw, 82vw" alt="Carro erguido em elevador automotivo RCM em uma oficina mecânica" width="800" height="1067" loading="lazy" decoding="async">
-            <span class="tipo-body">
-              <span class="tipo-tag">03</span>
-              <span class="tipo-title">Oficina Mecânica</span>
-              <span class="tipo-text">Elevadores Krebs, prensa hidráulica, guincho hidráulico, scanner Multimec, carrinhos e jogos de ferramentas.</span>
-              <span class="tipo-go">Quero esse tipo <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-            </span>
-          </button>
-          <button type="button" class="tipo-card reveal" style="--d:.24s" data-open-quiz data-tipo="Troca de óleo" data-origem="card-tipo">
-            <img src="assets/img/tipo-troca-de-oleo-rampa.webp" srcset="assets/img/tipo-troca-de-oleo-rampa-480.webp 480w, assets/img/tipo-troca-de-oleo-rampa.webp 720w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 46vw, 82vw" alt="Rampa para troca de óleo instalada pela RCM" width="720" height="1280" loading="lazy" decoding="async">
-            <span class="tipo-body">
-              <span class="tipo-tag">04</span>
-              <span class="tipo-title">Troca de Óleo</span>
-              <span class="tipo-text">Rampa para troca de óleo Krebs, coletor e pingadeira de óleo, engraxadeira e máquina de troca de óleo do câmbio automático Planatc.</span>
-              <span class="tipo-go">Quero esse tipo <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </section>
+        <div class="qp-card-body">
+          <!-- Contato -->
+          <form class="q-step" data-step="contato" novalidate>
+            <h2 class="q-title" tabindex="-1">Vamos começar. Para quem vamos preparar o direcionamento?</h2>
+            <p class="q-sub">Um especialista da RCM vai analisar suas respostas e falar com você.</p>
+            <div class="field">
+              <label for="q-nome">Nome</label>
+              <input id="q-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required maxlength="80">
+              <p class="field-err" data-err="nome"></p>
+            </div>
+            <div class="field">
+              <label for="q-whats">WhatsApp</label>
+              <input id="q-whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(62) 99999-9999" required maxlength="15">
+              <p class="field-err" data-err="whatsapp"></p>
+            </div>
+            <div class="field">
+              <label for="q-email">E-mail <span class="field-opt" data-email-opt>(opcional)</span></label>
+              <input id="q-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="120">
+              <p class="field-err" data-err="email"></p>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="q-site">Não preencha este campo</label>
+              <input id="q-site" name="site" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Começar <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="q-lock"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Seus dados ficam só com a RCM. Nada de spam. <a href="privacidade.html" target="_blank" rel="noopener">Política de privacidade</a></span></p>
+          </form>
 
-    <!-- ================= 3.5 COMO FUNCIONA ================= -->
-    <section class="section section-gray" id="como-funciona">
-      <div class="container como-grid">
-        <div class="como-aside">
-          <div class="como-sticky reveal">
-            <p class="kicker">Como funciona</p>
-            <h2 class="h2">Você cuida do negócio. A gente cuida da estrutura.</h2>
-            <figure class="como-foto">
-              <img src="assets/img/entrega-caminhao-equipamentos.webp" srcset="assets/img/entrega-caminhao-equipamentos-480.webp 480w, assets/img/entrega-caminhao-equipamentos.webp 1000w" sizes="(min-width: 1000px) 460px, 100vw" alt="Caminhão da RCM carregado com equipamentos embalados para entrega" width="1000" height="562" loading="lazy" decoding="async">
-              <figcaption>Equipamentos saindo para entrega e montagem.</figcaption>
-            </figure>
+          <!-- P1 -->
+          <div class="q-step" data-step="tipo" hidden>
+            <h2 class="q-title" tabindex="-1">O que você tem em mente abrir?</h2>
+            <div class="q-opts">
+              <button type="button" class="q-opt" data-value="Centro automotivo" data-cod="centro-automotivo"><span class="q-key">1</span>Centro automotivo</button>
+              <button type="button" class="q-opt" data-value="Borracharia" data-cod="borracharia"><span class="q-key">2</span>Borracharia</button>
+              <button type="button" class="q-opt" data-value="Oficina mecânica geral" data-cod="oficina-mecanica"><span class="q-key">3</span>Oficina mecânica geral</button>
+              <button type="button" class="q-opt" data-value="Troca de óleo" data-cod="troca-de-oleo"><span class="q-key">4</span>Troca de óleo</button>
+              <button type="button" class="q-opt" data-value="Outro" data-outro><span class="q-key">5</span>Outro</button>
+            </div>
+            <div class="q-outro" data-outro-box hidden>
+              <label for="q-outro">Conte qual:</label>
+              <input id="q-outro" type="text" maxlength="120" placeholder="Ex.: auto center com estética automotiva">
+              <p class="field-err" data-err="outro"></p>
+              <button type="button" class="btn btn-primary btn-block" data-outro-ok>Continuar <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
           </div>
-        </div>
-        <ol class="timeline" data-timeline>
-          <li class="tl-line" aria-hidden="true"><span class="tl-fill"></span></li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-search"/></svg></span>
-            <div><span class="tl-n">Etapa 1</span><h3>Diagnóstico do seu projeto.</h3><p>Entendemos seu tipo de loja, espaço e orçamento para indicar só o que faz sentido.</p></div>
-          </li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-layout"/></svg></span>
-            <div><span class="tl-n">Etapa 2</span><h3>Orientação do galpão.</h3><p>Indicamos a melhor posição de cada equipamento no seu espaço para o fluxo de trabalho render.</p></div>
-          </li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-wind"/></svg></span>
-            <div><span class="tl-n">Etapa 3</span><h3>Rede de ar e compressor.</h3><p>Desmontadoras, chaves de impacto e rampas pneumáticas precisam de ar bem dimensionado. Nossa equipe especializada projeta e executa a rede.</p></div>
-          </li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></span>
-            <div><span class="tl-n">Etapa 4</span><h3>Entrega montada e testada.</h3><p>Equipamento chega, é instalado e testado pela nossa equipe técnica. Você recebe tudo funcionando.</p></div>
-          </li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-grad"/></svg></span>
-            <div><span class="tl-n">Etapa 5</span><h3>Treinamento na prática.</h3><p>Ensinamos você e sua equipe a operar elevador, rampa, alinhador, desmontadora e balanceadora.</p></div>
-          </li>
-          <li class="tl-step reveal">
-            <span class="tl-ic"><svg aria-hidden="true"><use href="#i-headset"/></svg></span>
-            <div><span class="tl-n">Etapa 6</span><h3>Pós-venda de verdade.</h3><p>Depois da inauguração, a RCM continua do seu lado com assistência técnica própria.</p></div>
-          </li>
-        </ol>
-      </div>
-    </section>
 
-    <!-- ================= 3.6 GARANTIA ================= -->
-    <section class="section section-dark garantia" id="garantia">
-      <div class="garantia-stripes" aria-hidden="true"></div>
-      <div class="container">
-        <div class="garantia-head">
-          <div class="reveal">
-            <p class="kicker">O diferencial que ninguém conta</p>
-            <h2 class="h2 h2-xl">Deu problema? Você fala com a gente. <em>Ponto.</em></h2>
+          <!-- P2 -->
+          <div class="q-step" data-step="prazo" hidden>
+            <h2 class="q-title" tabindex="-1">Para quando é esse projeto?</h2>
+            <div class="q-opts">
+              <button type="button" class="q-opt" data-value="O mais rápido possível, já estou com o ponto alugado" data-cod="imediato"><span class="q-key">1</span>O mais rápido possível, já estou com o ponto alugado</button>
+              <button type="button" class="q-opt" data-value="Nos próximos 3 meses" data-cod="3m"><span class="q-key">2</span>Nos próximos 3 meses</button>
+              <button type="button" class="q-opt" data-value="Nos próximos 6 meses" data-cod="6m"><span class="q-key">3</span>Nos próximos 6 meses</button>
+              <button type="button" class="q-opt" data-value="Daqui a 1 ano ou mais" data-cod="12m"><span class="q-key">4</span>Daqui a 1 ano ou mais</button>
+            </div>
+            <div class="q-note">
+              <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+              <p><strong>Pode responder com sinceridade.</strong> A maioria das lojas que montamos começou com conversas meses antes da abertura. Projeto para daqui a 6 meses ou 1 ano recebe exatamente o mesmo atendimento de quem já está com o ponto alugado. Saber o seu prazo só nos ajuda a te orientar melhor.</p>
+            </div>
           </div>
-          <div class="reveal" style="--d:.1s">
-            <p class="lead">Defeito de fábrica é raro, mas quando acontece, a maioria dos lojistas descobre o pior lado de comprar equipamento: ligar para fábrica, esperar resposta, despachar máquina, ficar parado sem previsão.</p>
-            <p class="lead">Na RCM é diferente. Nós mesmos prestamos a garantia de todos os equipamentos que vendemos e fazemos a ponte direta com o fabricante. Sem burocracia, sem você ser deixado de lado.</p>
-          </div>
-        </div>
-        <div class="compare">
-          <div class="compare-col compare-bad reveal">
-            <h3>Comprando sozinho</h3>
-            <ol>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Você liga para a fábrica</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Espera dias por resposta</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Despacha o equipamento por sua conta</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Fica com a loja parada sem previsão</li>
-            </ol>
-          </div>
-          <div class="compare-col compare-good reveal" style="--d:.12s">
-            <span class="compare-badge"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia RCM</span>
-            <h3>Comprando com a RCM</h3>
-            <ol>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Um único contato</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Nossa equipe técnica avalia</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>A gente resolve com a fábrica</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Você volta a trabalhar</li>
-            </ol>
-          </div>
-        </div>
-        <p class="garantia-note reveal">Desde 2019 temos a <strong>RCM Serviços</strong>, empresa dedicada só a pós-venda, montagem e assistência técnica especializada.</p>
-      </div>
-    </section>
 
-    <!-- ================= 3.7 CUSTO-BENEFÍCIO ================= -->
-    <section class="section section-light" id="custo-beneficio">
-      <div class="container">
-        <div class="section-head section-head-center reveal">
-          <p class="kicker">Custo-benefício</p>
-          <h2 class="h2">Nem o barato que sai caro. Nem o caro que só tem marca.</h2>
-          <p class="lead">Trabalhamos com o melhor custo-benefício do mercado: equipamentos seguros, robustos e de marcas consolidadas, sem preço superfaturado. Você investe no que gera retorno para a sua loja.</p>
-        </div>
-        <div class="cb-grid">
-          <div class="cb-card reveal">
-            <p class="cb-label">Equipamento barato demais</p>
-            <ul>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Risco na operação</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Quebra cedo</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Sem suporte</li>
-            </ul>
+          <!-- P3 -->
+          <div class="q-step" data-step="investimento" hidden>
+            <h2 class="q-title" tabindex="-1">Quanto você pretende investir somente em equipamentos e ferramentas?</h2>
+            <p class="q-sub">Considere apenas máquinas, elevadores, rampas, compressor e ferramentas. <strong>Não inclua</strong> aluguel, reforma do galpão, móveis ou estoque de peças e pneus.</p>
+            <div class="q-opts">
+              <button type="button" class="q-opt" data-value="Até R$ 50 mil" data-cod="ate50"><span class="q-key">1</span>Até R$ 50 mil</button>
+              <button type="button" class="q-opt" data-value="De R$ 50 mil a R$ 100 mil" data-cod="50a100"><span class="q-key">2</span>De R$ 50 mil a R$ 100 mil</button>
+              <button type="button" class="q-opt" data-value="Acima de R$ 100 mil" data-cod="100mais"><span class="q-key">3</span>Acima de R$ 100 mil</button>
+            </div>
           </div>
-          <div class="cb-card cb-best reveal" style="--d:.1s">
-            <span class="cb-ribbon">Escolha certa</span>
-            <img class="cb-logo" src="assets/img/logo-rcm-distribuidora.svg" alt="RCM" width="110" height="47" loading="lazy">
-            <ul>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Qualidade comprovada</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Preço justo</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Suporte completo</li>
-            </ul>
-          </div>
-          <div class="cb-card reveal" style="--d:.2s">
-            <p class="cb-label">Equipamento superfaturado</p>
-            <ul>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Paga pela marca</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Retorno demora mais</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="marcas" aria-label="Marcas parceiras">
-        <p class="marcas-title">Marcas parceiras</p>
-        <div class="marcas-track">
-          <ul class="marcas-list">
-            <li class="m-krebs">KREBS</li><li class="m-cartech">CAR-TECH</li><li class="m-prodmaster">PRODMASTER</li><li class="m-pressure">PRESSURE</li><li class="m-topfusion">TOPFUSION</li><li class="m-raven">RAVEN</li><li class="m-marcon">MARCON</li><li class="m-planatc">PLANATC</li><li class="m-lupus">LUPUS</li><li class="m-gedore">GEDORE</li><li class="m-gaho">GAHO</li><li class="m-stampjet">STAMPJET</li><li class="m-pdr">PDR</li>
-          </ul>
-          <ul class="marcas-list" aria-hidden="true">
-            <li class="m-krebs">KREBS</li><li class="m-cartech">CAR-TECH</li><li class="m-prodmaster">PRODMASTER</li><li class="m-pressure">PRESSURE</li><li class="m-topfusion">TOPFUSION</li><li class="m-raven">RAVEN</li><li class="m-marcon">MARCON</li><li class="m-planatc">PLANATC</li><li class="m-lupus">LUPUS</li><li class="m-gedore">GEDORE</li><li class="m-gaho">GAHO</li><li class="m-stampjet">STAMPJET</li><li class="m-pdr">PDR</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================= 3.8 DEPOIMENTOS ================= -->
-    <section class="section section-dark depo" id="depoimentos">
-      <div class="container">
-        <div class="section-head section-head-row reveal">
-          <div>
-            <p class="kicker">Depoimentos</p>
-            <h2 class="h2">Quem abriu com a RCM conta como foi.</h2>
+          <!-- P4 -->
+          <div class="q-step" data-step="perfil" hidden>
+            <h2 class="q-title" tabindex="-1">Qual dessas situações é mais parecida com a sua?</h2>
+            <p class="q-sub">Somos especialistas em todos os perfis. Cada um recebe uma orientação diferente.</p>
+            <div class="q-opts">
+              <button type="button" class="q-opt" data-value="Sou mecânico e quero abrir minha própria loja em vez de trabalhar para outro" data-cod="mecanico"><span class="q-key">1</span>Sou mecânico e quero abrir minha própria loja em vez de trabalhar para outro</button>
+              <button type="button" class="q-opt" data-value="Trabalho em outra área e quero abrir meu próprio negócio" data-cod="outra-area"><span class="q-key">2</span>Trabalho em outra área e quero abrir meu próprio negócio</button>
+              <button type="button" class="q-opt" data-value="Já sou empresário de outro ramo e quero entrar no setor automotivo" data-cod="empresario-outro-ramo"><span class="q-key">3</span>Já sou empresário de outro ramo e quero entrar no setor automotivo</button>
+              <button type="button" class="q-opt" data-value="Já sou empresário do setor automotivo e quero expandir" data-cod="empresario-setor"><span class="q-key">4</span>Já sou empresário do setor automotivo e quero expandir</button>
+            </div>
           </div>
-          <div class="slider-nav">
-            <button type="button" class="slider-btn" data-prev aria-label="Depoimento anterior"><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
-            <button type="button" class="slider-btn" data-next aria-label="Próximo depoimento"><svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
-          </div>
-        </div>
-        <div class="swiper depo-swiper" data-depoimentos>
-          <div class="swiper-wrapper"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================= 3.9 GALERIA ================= -->
-    <section class="section section-light" id="lojas">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="kicker">Lojas entregues</p>
-          <h2 class="h2">Algumas das lojas que já saíram do papel.</h2>
+          <!-- P5 -->
+          <form class="q-step" data-step="duvida" novalidate hidden>
+            <h2 class="q-title" tabindex="-1">Qual é hoje a sua maior dúvida para tirar essa loja do papel?</h2>
+            <p class="q-sub">Escreva do seu jeito, a gente quer te ouvir. Quanto mais você contar, mais certeiro vai ser o direcionamento do nosso especialista.</p>
+            <div class="q-chips">
+              <button type="button" class="chip" aria-pressed="false">Quanto preciso investir</button>
+              <button type="button" class="chip" aria-pressed="false">Quais máquinas comprar primeiro</button>
+              <button type="button" class="chip" aria-pressed="false">Se esse negócio dá lucro</button>
+              <button type="button" class="chip" aria-pressed="false">Como organizar o galpão e a rede de ar</button>
+              <button type="button" class="chip" aria-pressed="false">Tenho receio de abrir sem orientação</button>
+              <button type="button" class="chip" aria-pressed="false">Formas de pagamento</button>
+            </div>
+            <label class="sr-only" for="q-duvida">Sua maior dúvida</label>
+            <textarea id="q-duvida" rows="4" maxlength="1500" placeholder="Ex.: tenho um galpão de 200 m² e quero saber quais máquinas cabem e por onde começar..."></textarea>
+            <p class="field-err" data-err="duvida"></p>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar minhas respostas <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </form>
         </div>
-        <div class="galeria" data-galeria>
-          <a class="gal-item reveal" href="assets/img/hero-centro-automotivo-elevadores.webp"><img src="assets/img/hero-centro-automotivo-elevadores.webp" srcset="assets/img/hero-centro-automotivo-elevadores-480.webp 480w, assets/img/hero-centro-automotivo-elevadores.webp 1280w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Centro automotivo com quatro elevadores vermelhos" width="1280" height="960" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevador-vermelho-parede-amarela.webp"><img src="assets/img/loja-elevador-vermelho-parede-amarela.webp" srcset="assets/img/loja-elevador-vermelho-parede-amarela-480.webp 480w, assets/img/loja-elevador-vermelho-parede-amarela.webp 1000w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevador vermelho RCM em loja com parede amarela" width="1000" height="1333" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-rampas-alinhamento-vermelhas.webp"><img src="assets/img/loja-rampas-alinhamento-vermelhas.webp" srcset="assets/img/loja-rampas-alinhamento-vermelhas-480.webp 480w, assets/img/loja-rampas-alinhamento-vermelhas.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Duas rampas de alinhamento vermelhas instaladas" width="960" height="1280" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevadores-pretos-galpao.webp"><img src="assets/img/loja-elevadores-pretos-galpao.webp" srcset="assets/img/loja-elevadores-pretos-galpao-480.webp 480w, assets/img/loja-elevadores-pretos-galpao.webp 1000w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevadores pretos RCM em galpão com paredes laranja" width="1000" height="750" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevador-azul-tecnico.webp"><img src="assets/img/loja-elevador-azul-tecnico.webp" srcset="assets/img/loja-elevador-azul-tecnico-480.webp 480w, assets/img/loja-elevador-azul-tecnico.webp 900w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Técnico ao lado de elevador azul recém instalado" width="900" height="1600" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevador-vermelho-fachada.webp"><img src="assets/img/loja-elevador-vermelho-fachada.webp" srcset="assets/img/loja-elevador-vermelho-fachada-480.webp 480w, assets/img/loja-elevador-vermelho-fachada.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevador vermelho instalado na frente de uma oficina" width="960" height="1280" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-alinhador-3d-tecnico.webp"><img src="assets/img/loja-alinhador-3d-tecnico.webp" srcset="assets/img/loja-alinhador-3d-tecnico-480.webp 480w, assets/img/loja-alinhador-3d-tecnico.webp 899w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Alinhador 3D Car-Tech em operação" width="899" height="1599" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevador-vermelho-loja-nova.webp"><img src="assets/img/loja-elevador-vermelho-loja-nova.webp" srcset="assets/img/loja-elevador-vermelho-loja-nova-480.webp 480w, assets/img/loja-elevador-vermelho-loja-nova.webp 1000w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevador vermelho em loja nova com faixa azul" width="1000" height="750" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevadores-pretos-iluminacao.webp"><img src="assets/img/loja-elevadores-pretos-iluminacao.webp" srcset="assets/img/loja-elevadores-pretos-iluminacao-480.webp 480w, assets/img/loja-elevadores-pretos-iluminacao.webp 780w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevadores pretos em loja com iluminação de LED" width="780" height="1040" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-rampa-alinhamento-extra-longa.webp"><img src="assets/img/loja-rampa-alinhamento-extra-longa.webp" srcset="assets/img/loja-rampa-alinhamento-extra-longa-480.webp 480w, assets/img/loja-rampa-alinhamento-extra-longa.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Rampa de alinhamento extra longa instalada" width="960" height="1280" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevador-azul-oficina.webp"><img src="assets/img/loja-elevador-azul-oficina.webp" srcset="assets/img/loja-elevador-azul-oficina-480.webp 480w, assets/img/loja-elevador-azul-oficina.webp 1000w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevador azul instalado em oficina" width="1000" height="562" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-desmontadora-vermelha.webp"><img src="assets/img/loja-desmontadora-vermelha.webp" srcset="assets/img/loja-desmontadora-vermelha-480.webp 480w, assets/img/loja-desmontadora-vermelha.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Desmontadora de pneus Car-Tech vermelha" width="960" height="1280" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-elevadores-pretos-oficina.webp"><img src="assets/img/loja-elevadores-pretos-oficina.webp" srcset="assets/img/loja-elevadores-pretos-oficina-480.webp 480w, assets/img/loja-elevadores-pretos-oficina.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Elevador preto com braços amarelos em oficina" width="960" height="1280" loading="lazy" decoding="async"></a>
-          <a class="gal-item reveal" href="assets/img/loja-balanceadora-azul.webp"><img src="assets/img/loja-balanceadora-azul.webp" srcset="assets/img/loja-balanceadora-azul-480.webp 480w, assets/img/loja-balanceadora-azul.webp 960w" sizes="(min-width: 1100px) 280px, (min-width: 700px) 33vw, 50vw" alt="Balanceadora azul RCM Car-Tech instalada" width="960" height="1280" loading="lazy" decoding="async"></a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================= 3.10 FERRAMENTAS ================= -->
-    <section class="section section-gray" id="ferramentas">
-      <div class="container">
-        <div class="section-head section-head-row reveal">
-          <div>
-            <p class="kicker">Ferramentas e periféricos</p>
-            <h2 class="h2">E tudo o que a loja precisa no dia a dia.</h2>
-            <p class="lead">Além das máquinas principais, temos um catálogo completo de ferramentas: caixas e carrinhos de ferramentas, macaco jacaré, cavaletes, chaves de impacto, prensas, guinchos, compressores e muito mais. Sua loja sai completa, com um único fornecedor.</p>
-          </div>
-          <div class="slider-nav">
-            <button type="button" class="slider-btn slider-btn-dark" data-prev aria-label="Produtos anteriores"><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
-            <button type="button" class="slider-btn slider-btn-dark" data-next aria-label="Próximos produtos"><svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
-          </div>
+        <div class="qp-card-foot is-hidden" data-foot>
+          <button type="button" class="q-back" data-back><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg>Voltar</button>
         </div>
-        <div class="swiper prod-swiper" data-produtos>
-          <ul class="swiper-wrapper">
-            <li class="swiper-slide prod"><img src="assets/img/produtos/carrinho-para-ferramentas.webp" alt="" width="232" height="249" loading="lazy"><span>Carrinho para ferramentas</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/jogo-de-ferramentas-para-oficina.webp" alt="" width="269" height="269" loading="lazy"><span>Jogo de ferramentas para oficina</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/macaco-jacare-3-toneladas.webp" alt="" width="256" height="256" loading="lazy"><span>Macaco jacaré 3 toneladas</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/par-de-cavaletes-3t.webp" alt="" width="227" height="257" loading="lazy"><span>Par de cavaletes 3T</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/chave-de-impacto.webp" alt="" width="199" height="256" loading="lazy"><span>Chave de impacto com soquetes</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/compressor-de-ar-20-pes.webp" alt="" width="284" height="244" loading="lazy"><span>Compressor de ar 20 pés</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/rede-de-ar-comprimido.webp" alt="" width="313" height="256" loading="lazy"><span>Rede de ar comprimido</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/prensa-hidraulica-30-toneladas.webp" alt="" width="127" height="256" loading="lazy"><span>Prensa hidráulica 30 toneladas</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/guincho-hidraulico-1-tonelada.webp" alt="" width="248" height="257" loading="lazy"><span>Guincho hidráulico 1 tonelada</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/kit-de-ferramentas-para-oficinas.webp" alt="" width="215" height="256" loading="lazy"><span>Kit de ferramentas para oficinas</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/scanner-multimec.webp" alt="" width="386" height="257" loading="lazy"><span>Scanner Multimec</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/calibrador-de-pneus.webp" alt="" width="252" height="258" loading="lazy"><span>Calibrador de pneus</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/engraxadeira-pneumatica.webp" alt="" width="142" height="257" loading="lazy"><span>Engraxadeira pneumática</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/coletor-de-oleo.webp" alt="" width="137" height="257" loading="lazy"><span>Coletor de óleo com carrinho</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/maquina-troca-oleo-cambio-automatico.webp" alt="" width="131" height="229" loading="lazy"><span>Troca de óleo do câmbio automático</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/desempenador-de-rodas.webp" alt="" width="188" height="273" loading="lazy"><span>Desempenador de rodas</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/torno-de-bancada.webp" alt="" width="296" height="232" loading="lazy"><span>Torno de bancada</span></li>
-            <li class="swiper-slide prod"><img src="assets/img/produtos/moto-esmeril.webp" alt="" width="338" height="218" loading="lazy"><span>Moto esmeril de bancada</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 3.11 SHOWROOM ================= -->
-    <section class="section section-light showroom" id="showroom">
-      <div class="container showroom-grid">
-        <figure class="showroom-foto reveal">
-          <img src="assets/img/showroom-elevador-rcm.webp" srcset="assets/img/showroom-elevador-rcm-480.webp 480w, assets/img/showroom-elevador-rcm.webp 899w" sizes="(min-width: 1000px) 300px, 50vw" alt="Elevador RCM montado em ambiente de showroom" width="899" height="1599" loading="lazy" decoding="async">
-        </figure>
-        <div class="showroom-text reveal" style="--d:.1s">
-          <p class="kicker">Showroom</p>
-          <h2 class="h2">Venha ver os equipamentos funcionando.</h2>
-          <p class="lead">Temos showroom com equipamentos montados em Aparecida de Goiânia (GO). Atendemos clientes de todo o Brasil e temos parceiros em diversos estados.</p>
-          <p class="showroom-estados">Parceiros em <strong>BA, CE, DF, GO, MA, MT, MS, PA, PI, RO e TO</strong>.</p>
-          <p class="showroom-end"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Av. Independência, Qd. 08 Lt. 16, Jardim Monte Cristo, Aparecida de Goiânia, GO</p>
-          <button class="btn btn-outline" type="button" data-open-quiz data-origem="showroom">Quero agendar uma visita <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        </div>
-        <div class="tour reveal" style="--d:.2s">
-          <button type="button" class="tour-player" data-tour data-src="assets/video/tour-elevador-rampa-instalados.mp4">
-            <img src="assets/img/capa-video-tour-elevador.webp" alt="" width="464" height="832" loading="lazy">
-            <span class="play-btn"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
-            <span class="tour-cap"><span class="sr-only">Assistir vídeo. </span>Veja de perto: elevador e rampa instalados pela nossa equipe</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 3.12 FAQ ================= -->
-    <section class="section section-gray" id="duvidas">
-      <div class="container faq-grid">
-        <div class="section-head reveal">
-          <p class="kicker">Perguntas frequentes</p>
-          <h2 class="h2">Tire suas dúvidas antes de começar.</h2>
-          <button class="btn btn-primary" type="button" data-open-quiz data-origem="faq">Quero montar minha loja <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        </div>
-        <div class="faq">
-          <details class="faq-item reveal">
-            <summary>Meu projeto é para daqui a alguns meses. Posso falar com vocês agora?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Pode e deve. A maioria das lojas que montamos começou com conversas meses antes da abertura. Quanto antes você planejar, melhor fica o investimento.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Nunca tive loja. Vocês me ajudam mesmo assim?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Sim. Orientamos desde a escolha dos equipamentos até a posição de cada um no galpão e o treinamento para operar.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Quanto preciso investir?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Depende do tipo de loja e do tamanho do espaço. No diagnóstico indicamos uma estrutura que cabe no seu orçamento, sem empurrar o que você não precisa.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Vocês atendem fora de Goiás?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Sim. Atendemos clientes de todo o Brasil e temos parceiros na Bahia, Ceará, Distrito Federal, Goiás, Maranhão, Mato Grosso, Mato Grosso do Sul, Pará, Piauí, Rondônia e Tocantins.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Quais as formas de pagamento?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Parcelamos em até 18x no cartão (Visa, Mastercard, American Express e Elo) e também trabalhamos com BNDES.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>E se um equipamento der defeito?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>A garantia é feita pela própria RCM. Você fala com a gente e nós resolvemos com o fabricante.</p></div>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Vocês fazem a instalação da rede de ar?<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq-a"><p>Sim, temos equipe especializada para dimensionar e instalar compressor e rede de ar.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 3.13 CTA FINAL ================= -->
-    <section class="cta-final" id="comecar">
-      <img class="cta-bg" src="assets/img/cta-galpao-rampa-pneumatica.webp" alt="" width="960" height="1280" loading="lazy" decoding="async">
-      <div class="cta-overlay" aria-hidden="true"></div>
-      <div class="container cta-content reveal">
-        <h2 class="h2 h2-xl">Sua loja começa com uma conversa. <em>Vamos montar a sua?</em></h2>
-        <button class="btn btn-primary btn-lg" type="button" data-open-quiz data-origem="cta-final">Quero montar minha loja <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        <p class="hero-micro">5 perguntas rápidas. Menos de 2 minutos.</p>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <!-- ================= 3.14 RODAPÉ ================= -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <img src="assets/img/logo-rcm-distribuidora.svg" alt="RCM Distribuidora" width="150" height="64" loading="lazy">
-        <p class="footer-desc">Máquinas e equipamentos automotivos desde 1992. Mais de 30 anos montando lojas pelo Brasil.</p>
-      </div>
-      <div>
-        <p class="footer-title">Endereço</p>
-        <p class="footer-line"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Av. Independência, Qd. 08 Lt. 16, Jardim Monte Cristo, Aparecida de Goiânia, GO</p>
-      </div>
-      <div>
-        <p class="footer-title">Redes</p>
-        <a class="footer-line footer-link" href="https://instagram.com/rcm.equipamentos" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>@rcm.equipamentos</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span data-ano>2026</span> RCM Distribuidora de Máquinas e Equipamentos.</p>
-      <a href="privacidade.html">Política de Privacidade</a>
-    </div>
+  <footer class="qp-foot">
+    <p>© 2026 RCM Distribuidora · <a href="privacidade.html">Política de privacidade</a></p>
   </footer>
-
-  <!-- Barra fixa no celular -->
-  <div class="mobile-bar" data-mobile-bar aria-hidden="true">
-    <button class="btn btn-primary btn-block" type="button" data-open-quiz data-origem="barra-fixa" tabindex="-1">Quero montar minha loja <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-  </div>
-
-  <!-- Lightbox da galeria -->
-  <dialog class="lightbox" data-lightbox aria-label="Foto ampliada">
-    <img src="" alt="" data-lb-img>
-    <button type="button" class="lb-btn lb-close" data-lb-close aria-label="Fechar"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
-    <button type="button" class="lb-btn lb-prev" data-lb-prev aria-label="Foto anterior"><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
-    <button type="button" class="lb-btn lb-next" data-lb-next aria-label="Próxima foto"><svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
-    <p class="lb-count" data-lb-count></p>
-  </dialog>
-
-  <!-- ================= 4. QUIZ ================= -->
-  <div class="quiz" id="quiz" role="dialog" aria-modal="true" aria-labelledby="quiz-titulo" hidden>
-    <div class="quiz-top">
-      <div class="quiz-top-row">
-        <img src="assets/img/logo-rcm-distribuidora.svg" alt="RCM Distribuidora" width="84" height="36">
-        <p class="quiz-etapa" data-q-etapa aria-live="polite">Etapa 1 de 6</p>
-        <button type="button" class="quiz-close" data-q-close aria-label="Fechar questionário"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
-      </div>
-      <div class="quiz-progress" aria-hidden="true"><span data-q-bar></span></div>
-    </div>
-
-    <div class="quiz-scroll">
-      <div class="quiz-body">
-        <h2 class="sr-only" id="quiz-titulo">Diagnóstico do seu projeto de loja</h2>
-
-        <!-- Etapa 0: contato -->
-        <form class="q-step" data-step="contato" novalidate>
-          <h3 class="q-title" tabindex="-1">Vamos começar. Para quem vamos preparar o direcionamento?</h3>
-          <p class="q-sub">Um especialista da RCM vai analisar suas respostas e falar com você.</p>
-          <div class="field">
-            <label for="q-nome">Nome</label>
-            <input id="q-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required maxlength="80">
-            <p class="field-err" data-err="nome"></p>
-          </div>
-          <div class="field">
-            <label for="q-whats">WhatsApp</label>
-            <input id="q-whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(62) 99999-9999" required maxlength="15">
-            <p class="field-err" data-err="whatsapp"></p>
-          </div>
-          <div class="field">
-            <label for="q-email">E-mail <span class="field-opt" data-email-opt>(opcional)</span></label>
-            <input id="q-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="120">
-            <p class="field-err" data-err="email"></p>
-          </div>
-          <div class="hp" aria-hidden="true">
-            <label for="q-site">Não preencha este campo</label>
-            <input id="q-site" name="site" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Começar <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-          <p class="q-lock"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Seus dados ficam só com a RCM. Nada de spam. <a href="privacidade.html" target="_blank" rel="noopener">Política de privacidade</a></span></p>
-        </form>
-
-        <!-- P1 -->
-        <div class="q-step" data-step="tipo" hidden>
-          <h3 class="q-title" tabindex="-1">O que você tem em mente abrir?</h3>
-          <div class="q-opts" role="list">
-            <button type="button" class="q-opt" data-value="Centro automotivo"><span class="q-key">1</span>Centro automotivo</button>
-            <button type="button" class="q-opt" data-value="Borracharia"><span class="q-key">2</span>Borracharia</button>
-            <button type="button" class="q-opt" data-value="Oficina mecânica geral"><span class="q-key">3</span>Oficina mecânica geral</button>
-            <button type="button" class="q-opt" data-value="Troca de óleo"><span class="q-key">4</span>Troca de óleo</button>
-            <button type="button" class="q-opt" data-value="Outro" data-outro><span class="q-key">5</span>Outro</button>
-          </div>
-          <div class="q-outro" data-outro-box hidden>
-            <label for="q-outro">Conte qual:</label>
-            <input id="q-outro" type="text" maxlength="120" placeholder="Ex.: auto center com estética automotiva">
-            <p class="field-err" data-err="outro"></p>
-            <button type="button" class="btn btn-primary btn-block" data-outro-ok>Continuar <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-          </div>
-        </div>
-
-        <!-- P2 -->
-        <div class="q-step" data-step="prazo" hidden>
-          <h3 class="q-title" tabindex="-1">Para quando é esse projeto?</h3>
-          <div class="q-opts" role="list">
-            <button type="button" class="q-opt" data-value="O mais rápido possível, já estou com o ponto alugado" data-cod="imediato"><span class="q-key">1</span>O mais rápido possível, já estou com o ponto alugado</button>
-            <button type="button" class="q-opt" data-value="Nos próximos 3 meses" data-cod="3m"><span class="q-key">2</span>Nos próximos 3 meses</button>
-            <button type="button" class="q-opt" data-value="Nos próximos 6 meses" data-cod="6m"><span class="q-key">3</span>Nos próximos 6 meses</button>
-            <button type="button" class="q-opt" data-value="Daqui a 1 ano ou mais" data-cod="12m"><span class="q-key">4</span>Daqui a 1 ano ou mais</button>
-          </div>
-          <div class="q-note">
-            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
-            <p><strong>Pode responder com sinceridade.</strong> A maioria das lojas que montamos começou com conversas meses antes da abertura. Projeto para daqui a 6 meses ou 1 ano recebe exatamente o mesmo atendimento de quem já está com o ponto alugado. Saber o seu prazo só nos ajuda a te orientar melhor.</p>
-          </div>
-        </div>
-
-        <!-- P3 -->
-        <div class="q-step" data-step="investimento" hidden>
-          <h3 class="q-title" tabindex="-1">Quanto você pretende investir somente em equipamentos e ferramentas?</h3>
-          <p class="q-sub">Considere apenas máquinas, elevadores, rampas, compressor e ferramentas. <strong>Não inclua</strong> aluguel, reforma do galpão, móveis ou estoque de peças e pneus.</p>
-          <div class="q-opts" role="list">
-            <button type="button" class="q-opt" data-value="Até R$ 50 mil" data-cod="ate50"><span class="q-key">1</span>Até R$ 50 mil</button>
-            <button type="button" class="q-opt" data-value="De R$ 50 mil a R$ 75 mil" data-cod="50a75"><span class="q-key">2</span>De R$ 50 mil a R$ 75 mil</button>
-            <button type="button" class="q-opt" data-value="De R$ 75 mil a R$ 100 mil" data-cod="75a100"><span class="q-key">3</span>De R$ 75 mil a R$ 100 mil</button>
-            <button type="button" class="q-opt" data-value="De R$ 100 mil a R$ 150 mil" data-cod="100a150"><span class="q-key">4</span>De R$ 100 mil a R$ 150 mil</button>
-            <button type="button" class="q-opt" data-value="Acima de R$ 150 mil" data-cod="150mais"><span class="q-key">5</span>Acima de R$ 150 mil</button>
-            <button type="button" class="q-opt" data-value="Ainda não sei, preciso de orientação" data-cod="naosei"><span class="q-key">6</span>Ainda não sei, preciso de orientação</button>
-          </div>
-        </div>
-
-        <!-- P4 -->
-        <div class="q-step" data-step="perfil" hidden>
-          <h3 class="q-title" tabindex="-1">Qual dessas situações é mais parecida com a sua?</h3>
-          <p class="q-sub">Somos especialistas em todos os perfis. Cada um recebe uma orientação diferente.</p>
-          <div class="q-opts" role="list">
-            <button type="button" class="q-opt" data-value="Sou mecânico e quero abrir minha própria loja em vez de trabalhar para outro"><span class="q-key">1</span>Sou mecânico e quero abrir minha própria loja em vez de trabalhar para outro</button>
-            <button type="button" class="q-opt" data-value="Trabalho em outra área e quero abrir meu próprio negócio"><span class="q-key">2</span>Trabalho em outra área e quero abrir meu próprio negócio</button>
-            <button type="button" class="q-opt" data-value="Já sou empresário de outro ramo e quero entrar no setor automotivo"><span class="q-key">3</span>Já sou empresário de outro ramo e quero entrar no setor automotivo</button>
-            <button type="button" class="q-opt" data-value="Já sou empresário do setor automotivo e quero expandir"><span class="q-key">4</span>Já sou empresário do setor automotivo e quero expandir</button>
-          </div>
-        </div>
-
-        <!-- P5 -->
-        <form class="q-step" data-step="duvida" novalidate hidden>
-          <h3 class="q-title" tabindex="-1">Qual é hoje a sua maior dúvida para tirar essa loja do papel?</h3>
-          <p class="q-sub">Escreva do seu jeito, a gente quer te ouvir. Quanto mais você contar, mais certeiro vai ser o direcionamento do nosso especialista.</p>
-          <div class="q-chips">
-            <button type="button" class="chip" aria-pressed="false">Quanto preciso investir</button>
-            <button type="button" class="chip" aria-pressed="false">Quais máquinas comprar primeiro</button>
-            <button type="button" class="chip" aria-pressed="false">Se esse negócio dá lucro</button>
-            <button type="button" class="chip" aria-pressed="false">Como organizar o galpão e a rede de ar</button>
-            <button type="button" class="chip" aria-pressed="false">Tenho receio de abrir sem orientação</button>
-            <button type="button" class="chip" aria-pressed="false">Formas de pagamento</button>
-          </div>
-          <label class="sr-only" for="q-duvida">Sua maior dúvida</label>
-          <textarea id="q-duvida" rows="4" maxlength="1500" placeholder="Ex.: tenho um galpão de 200 m² e quero saber quais máquinas cabem e por onde começar..."></textarea>
-          <p class="field-err" data-err="duvida"></p>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar minhas respostas <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        </form>
-
-        <!-- Tela final -->
-        <div class="q-step q-final" data-step="final" hidden>
-          <div class="status" data-status>
-            <div class="status-row">
-              <span class="status-ic" data-status-ic><span class="spinner" aria-hidden="true"></span></span>
-              <p class="status-msg" data-status-msg aria-live="polite">Enviando suas respostas ao nosso time...</p>
-            </div>
-            <div class="status-bar" aria-hidden="true"><span data-status-bar></span></div>
-          </div>
-
-          <div class="video-final" data-video-final></div>
-
-          <div class="next-steps">
-            <p class="next-title">O que acontece agora:</p>
-            <ol>
-              <li><span>1</span>Nosso especialista analisa suas respostas.</li>
-              <li><span>2</span>Entramos em contato pelo WhatsApp.</li>
-              <li><span>3</span>Você recebe uma indicação de estrutura para o seu tipo de loja.</li>
-            </ol>
-          </div>
-
-          <a class="btn btn-whats btn-block" data-q-whats href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-whats"/></svg>Quer adiantar? Fale agora no WhatsApp</a>
-
-          <div class="final-depo">
-            <div class="final-depo-head">
-              <p class="next-title">Quem abriu com a RCM conta como foi</p>
-              <div class="slider-nav">
-                <button type="button" class="slider-btn slider-btn-dark" data-prev aria-label="Depoimento anterior"><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
-                <button type="button" class="slider-btn slider-btn-dark" data-next aria-label="Próximo depoimento"><svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
-              </div>
-            </div>
-            <div class="swiper depo-swiper" data-depoimentos>
-              <div class="swiper-wrapper"></div>
-            </div>
-          </div>
-          <button type="button" class="q-restart" data-q-restart>Enviar respostas de outra pessoa</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="quiz-foot" data-q-foot>
-      <button type="button" class="q-back" data-q-back><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg>Voltar</button>
-    </div>
-
-    <!-- Confirmação de saída -->
-    <div class="q-confirm" data-q-confirm hidden>
-      <div class="q-confirm-box" role="alertdialog" aria-modal="true" aria-labelledby="q-confirm-txt">
-        <p id="q-confirm-txt" data-q-confirm-txt>Faltam só 5 perguntas. Quer mesmo sair?</p>
-        <button type="button" class="btn btn-primary btn-block" data-q-stay>Continuar respondendo</button>
-        <button type="button" class="q-leave" data-q-leave>Sair</button>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
